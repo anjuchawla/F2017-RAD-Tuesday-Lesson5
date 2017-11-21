@@ -93,6 +93,7 @@
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnPrint
             // 
@@ -111,6 +112,7 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "&Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnFindPrice
             // 
@@ -132,7 +134,12 @@
             // 
             // cboType
             // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.FormattingEnabled = true;
+            this.cboType.Items.AddRange(new object[] {
+            "Regular",
+            "Decaffientated",
+            "Special Blend"});
             this.cboType.Location = new System.Drawing.Point(353, 57);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(121, 24);
@@ -214,6 +221,7 @@
             this.Name = "frmBulkCoffeeSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "R \'n R for Reading and Refreshment";
+            this.Load += new System.EventHandler(this.frmBulkCoffeeSales_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

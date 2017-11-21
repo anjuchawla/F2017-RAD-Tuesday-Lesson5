@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBulkCoffeeSales));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,6 +44,8 @@
             this.rdoFullPound = new System.Windows.Forms.RadioButton();
             this.rdoHalfPound = new System.Windows.Forms.RadioButton();
             this.rdoQuarterPound = new System.Windows.Forms.RadioButton();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +106,7 @@
             this.btnPrint.TabIndex = 7;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnClear
             // 
@@ -122,6 +126,7 @@
             this.btnFindPrice.TabIndex = 5;
             this.btnFindPrice.Text = "&Find Price";
             this.btnFindPrice.UseVisualStyleBackColor = true;
+            this.btnFindPrice.Click += new System.EventHandler(this.btnFindPrice_Click);
             // 
             // txtPrice
             // 
@@ -185,6 +190,7 @@
             this.rdoFullPound.TabStop = true;
             this.rdoFullPound.Text = "F&ull Pound";
             this.rdoFullPound.UseVisualStyleBackColor = true;
+            this.rdoFullPound.CheckedChanged += new System.EventHandler(this.rdoQuantity_CheckedChanged);
             // 
             // rdoHalfPound
             // 
@@ -196,6 +202,7 @@
             this.rdoHalfPound.TabStop = true;
             this.rdoHalfPound.Text = "&Half Pound";
             this.rdoHalfPound.UseVisualStyleBackColor = true;
+            this.rdoHalfPound.CheckedChanged += new System.EventHandler(this.rdoQuantity_CheckedChanged);
             // 
             // rdoQuarterPound
             // 
@@ -207,6 +214,21 @@
             this.rdoQuarterPound.TabStop = true;
             this.rdoQuarterPound.Text = "&Quarter Pound";
             this.rdoQuarterPound.UseVisualStyleBackColor = true;
+            this.rdoQuarterPound.CheckedChanged += new System.EventHandler(this.rdoQuantity_CheckedChanged);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // frmBulkCoffeeSales
             // 
@@ -221,6 +243,7 @@
             this.Name = "frmBulkCoffeeSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "R \'n R for Reading and Refreshment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBulkCoffeeSales_FormClosing);
             this.Load += new System.EventHandler(this.frmBulkCoffeeSales_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -248,6 +271,8 @@
         private System.Windows.Forms.RadioButton rdoFullPound;
         private System.Windows.Forms.RadioButton rdoHalfPound;
         private System.Windows.Forms.RadioButton rdoQuarterPound;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 
